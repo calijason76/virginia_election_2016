@@ -20,8 +20,8 @@ app.title='VA 2016'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H3('2016 Presidential Election: Vote Totals by Jurisdiction for Virginia'),
-    dcc.Checklist(
-        id='checklist',
+    dcc.Dropdown(
+        id='dropdown',
         options=[{'label': i, 'value': i} for i in options_list],
         value=options_list[0]
     ),
