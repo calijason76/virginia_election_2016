@@ -24,6 +24,7 @@ app.layout = html.Div([
         id='dropdown',
         options=[{'label': i, 'value': i} for i in options_list],
         value=options_list[0]
+        multi=True
     ),
     html.Br(),
     dcc.Graph(id='display-value'),
