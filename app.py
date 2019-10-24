@@ -19,7 +19,7 @@ app.title='VA 2016'
 
 ####### Layout of the app ########
 app.layout = html.Div([
-    html.H3('2016 Presidential Election: Vote Totals by Jurisdiction'),
+    html.H3('2016 Presidential Election: Vote Totals by Jurisdiction for Virginia'),
     dcc.Dropdown(
         id='dropdown',
         options=[{'label': i, 'value': i} for i in options_list],
@@ -28,7 +28,7 @@ app.layout = html.Div([
     html.Br(),
     dcc.Graph(id='display-value'),
     html.Br(),
-    html.A('Code on Github', href='https://github.com/austinlasseter/virginia_election_2016'),
+    html.A('Code on Github', href='https://github.com/calijason76/virginia_election_2016'),
     html.Br(),
     html.A('Data Source', href='https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LYWX3D')
 ])
@@ -42,15 +42,15 @@ def juris_picker(juris_name):
 
     mydata1 = go.Bar(x=list(juris_df['precinct'].value_counts().index),
                      y=list(juris_df['votes']['Donald Trump']),
-                     marker=dict(color='#122A7F'),
+                     marker=dict(color='#FF0000'),
                      name='Trump')
     mydata2 = go.Bar(x=list(juris_df['precinct'].value_counts().index),
                      y=list(juris_df['votes']['Hillary Clinton']),
-                     marker=dict(color='#f96800'),
+                     marker=dict(color='#00008B'),
                      name='Clinton')
     mydata3 = go.Bar(x=list(juris_df['precinct'].value_counts().index),
                      y=list(juris_df['votes']['Other']),
-                     marker=dict(color='#009900'),
+                     marker=dict(color='#00FF00'),
                      name='Other')
 
     mylayout = go.Layout(
